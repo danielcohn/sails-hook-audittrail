@@ -25,8 +25,8 @@ module.exports = function(sails) {
             config.model = auditModel
             sails
                 .util
-                ._(sails.models)
-                .forEach(function(model) {
+                ._
+                .forEach(function(sails.models, model) {
                     //bind path validate
                     //on concrete models
                     //and left derived model
