@@ -22,11 +22,9 @@ module.exports = function(sails) {
             config.connection = sails.config.connections[config.connection]
         }
         auditModel(config).init(function(err,auditModel) {
-            config.model = auditModel
-            sails
-                .util
-                ._
-                .forEach(function(sails.models, model) {
+            config.model = auditModel;
+            sails.util._.forEach(sails.models, function(model) {
+
                     //bind path validate
                     //on concrete models
                     //and left derived model
