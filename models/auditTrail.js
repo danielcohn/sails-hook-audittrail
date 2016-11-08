@@ -20,8 +20,7 @@ module.exports = function(config) {
 		},
 		connections: {
 			auditorAdapterConnection: config.connection
-		}, 
-		models:  config.models
+		}
 	}
 	
 	newConfig['adapters'][includeModule] = dbModule
@@ -33,6 +32,8 @@ module.exports = function(config) {
 
 	  // Set schema true/false for adapters that support schemaless
 	  schema: true,
+
+		migrate: config.migrate || 'safe',
 
 	  // Define an adapter to use
 	  connection: 'auditorAdapterConnection',
@@ -77,7 +78,8 @@ module.exports = function(config) {
 	var init = function(cb) {
 		waterline.initialize(newConfig, function (err, ontology) {
 			if (err != null) {
-				cb(err)
+				cb(err);
+				return;
 			}
 			var Audit = ontology.collections.audittrail;
 			config.model = Audit
