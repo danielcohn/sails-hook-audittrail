@@ -33,7 +33,7 @@ module.exports = function(config) {
 	  // Set schema true/false for adapters that support schemaless
 	  schema: true,
 
-		migrate: config.migrate || 'safe',
+		migrate: config.migrate || 'alter',
 
 	  // Define an adapter to use
 	  connection: 'auditorAdapterConnection',
