@@ -20,7 +20,8 @@ module.exports = function(config) {
 		},
 		connections: {
 			auditorAdapterConnection: config.connection
-		}
+		}, 
+		models:  config.models
 	}
 	
 	newConfig['adapters'][includeModule] = dbModule
