@@ -93,13 +93,13 @@ module.exports = function(model,config,results) {
 					};
 
 					if(config.userID) {
-						if (typeof v === "function") {
+						if (typeof config.userID === "function") {
 							values.userID = config.userID();
 						} else {
 							values.userID = config.userID;
 						}
 					}
-					
+
 					changedValue.push(values);
 				}
 				
