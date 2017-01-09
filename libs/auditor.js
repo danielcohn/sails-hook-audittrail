@@ -15,7 +15,7 @@ module.exports = function(model,config,results) {
 
 	var convAttr = {}
 
-	var Auditor =config.model
+	var Auditor = config.model;
 
 	var availableOpertaion = {
 		create:'insert',
@@ -82,7 +82,7 @@ module.exports = function(model,config,results) {
 				}
 
 				if(newValue != '' || currentOperation == availableOpertaion.del) {
-					changedValue.push({
+					var values = {
 						columnName:key,
 						oldValue:value,
 						newValue:newValue,
@@ -90,7 +90,17 @@ module.exports = function(model,config,results) {
 						timestamp: timestamp,
 						foreignKey:foreignKey,
 						operation: currentOperation
-					});
+					};
+
+					if(config.userID) {
+						if (typeof v === "function") {
+							values.userID = config.userID();
+						} else {
+							values.userID = config.userID;
+						}
+					}
+					
+					changedValue.push(values);
 				}
 				
 			}

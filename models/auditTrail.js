@@ -54,7 +54,10 @@ module.exports = function(config) {
 	  		type: 'string',
 	  		maxLength:255
 	  	},
-
+	  	userID:{
+	  		type: 'string',
+	  		maxLength:255
+	  	},
 	  	timestamp: {
 	  		type: 'int',	  		
 	  	},

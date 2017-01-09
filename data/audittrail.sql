@@ -26,6 +26,7 @@ CREATE TABLE `audittrail` (
   `oldValue` varchar(255) DEFAULT NULL,
   `newValue` varchar(255) DEFAULT NULL,
   `modelID` varchar(255) DEFAULT NULL,
+  `userID` varchar(255) DEFAULT NULL,
   `timestamp` varchar(255) DEFAULT NULL,
   `foreignKey` varchar(255) DEFAULT NULL,
   `operation` varchar(255) DEFAULT NULL,
