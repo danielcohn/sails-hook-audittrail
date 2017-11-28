@@ -1,6 +1,6 @@
 'use strict';
 //import sails waterline Deferred
-var Deferred = require('sails/node_modules/waterline/lib/waterline/query/deferred'),
+var Deferred = require('waterline/lib/waterline/query/deferred'),
     Auditor = require('./auditor'),
     _ = require('lodash'),
     save = require('./save.js')

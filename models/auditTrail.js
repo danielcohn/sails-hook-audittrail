@@ -1,6 +1,6 @@
 'use strict'
 var _ = require('lodash'),
-	Waterline = require('sails/node_modules/waterline')
+	Waterline = require('waterline')
 
 module.exports = function(config) {
 	var table = "audittrail"
