@@ -2,7 +2,7 @@
 //import sails waterline Deferred
 var Deferred = require('waterline/lib/waterline/query/deferred'),
     Auditor = require('./auditor'),
-    defaultMethods = require('sails/node_modules/waterline/lib/waterline/model/lib/defaultMethods')
+    defaultMethods = require('waterline/lib/waterline/model/lib/defaultMethods')
 /**
  * @description path sails `update()` method to allow
  *              custom error message definitions
